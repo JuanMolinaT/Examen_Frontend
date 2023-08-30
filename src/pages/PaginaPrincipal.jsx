@@ -5,10 +5,7 @@ import FormularioActividad from '../components/FormularioActividad';
 const PaginaPrincipal = () => {
 
     const [ actividades, setActividades ] = useState([]);
-
-    console.log(actividades)
     const eliminarActividad = async (id) =>{
-        console.log("desde eliminar", id)
         try {
             const {data} = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/tareas/${id}`)
 
