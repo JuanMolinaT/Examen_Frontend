@@ -10,7 +10,7 @@ const PaginaPrincipal = () => {
     const eliminarActividad = async (id) =>{
         console.log("desde eliminar", id)
         try {
-            const {data} = await axios.delete(`http://localhost:4000/api/tareas/${id}`)
+            const {data} = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/tareas/${id}`)
 
         } catch (error) {
             console.log(error)
@@ -20,7 +20,7 @@ const PaginaPrincipal = () => {
     useEffect(()=>{
         const consultarActividades = async ()=>{
             try {
-                const {data} = await axios.get('http://localhost:4000/api/tareas/')
+                const {data} = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/tareas/`)
                 setActividades(data);
             } catch (error) {
                 console.log(error)
