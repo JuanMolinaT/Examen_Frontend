@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import ListaActividades from '../components/ListaActividades';
 const FormularioActividad = () => {
-    axios.defaults.baseURL = "http://localhost:4000/api/tareas";
+    axios.defaults.baseURL = `${import.meta.env.VITE_BACKEND_URL}/api/tareas`;
 
     const [actividades, setActividades] = useState([]);
 
@@ -23,7 +23,7 @@ const FormularioActividad = () => {
             return
         }
         try {
-             const {data} = await axios.post('http://localhost:4000/api/tareas/', { nombreMateria, unidad, descripcion, calificacion, fecha, nombreActividad })
+             const {data} = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/tareas/`, { nombreMateria, unidad, descripcion, calificacion, fecha, nombreActividad })
             alert('Datos Guardados Correctamente')
         } catch (error) {
             alert('Error al guardar el registro, verifique el codigo del ingreso')
