@@ -24,7 +24,7 @@ const FormularioActividad = () => {
         }
         try {
              const {data} = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/tareas/`, { nombreMateria, unidad, descripcion, calificacion, fecha, nombreActividad })
-            alert('Datos Guardados Correctamente')
+            alert('Datos Guardados Correctamente, ¡ Actualice la página para ver los cambios !')
         } catch (error) {
             alert('Error al guardar el registro, verifique el codigo del ingreso')
         }

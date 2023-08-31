@@ -4,7 +4,7 @@ const ListaActividades = ({eliminarActividad, actividadR}) => {
 
     const { _id, calificacion, descripcion, nombreActividad, nombreMateria, unidad, fecha }=actividadR;
     const handleEliminarActividad = (actividadId) => {
-        const respuesta = confirm('Deseas eliminar este paciente?')
+        const respuesta = confirm('Deseas eliminar este registro? Actualice la página para ver los cambios')
         if (respuesta) {
             eliminarActividad(actividadId)
         }
